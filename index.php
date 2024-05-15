@@ -5,9 +5,13 @@
 Stampiamo delle card contenenti i dettagli dei prodotti, 
 come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
 <?php
+require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/ProductType.php';
 require_once __DIR__ . '/Models/Category.php';
+
+// var_dump($products);
+// var_dump($cat);
 
 ?>
 
@@ -34,7 +38,27 @@ require_once __DIR__ . '/Models/Category.php';
             </div>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <div class="container">
+            <div class="card-group gap-3 my-5">
+                <?php foreach ($products as $product) { ?>
+                    <div class="card rounded shadow border" role="button">
+                        <img src="<?php echo $product->image ?>" class="card-img-top rounded" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $product->title ?></h5>
+                            <div class="card-text text-success"><?php echo $product->getPrice() ?> <?php echo '€' ?></div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><?php echo $product->type ?></small>
+                            <div>
+                                <?php echo $product->categories ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
