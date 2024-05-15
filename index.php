@@ -7,7 +7,6 @@ come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che 
 <?php
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/Models/Product.php';
-require_once __DIR__ . '/Models/ProductType.php';
 require_once __DIR__ . '/Models/Category.php';
 
 // var_dump($products);
