@@ -4,7 +4,7 @@ class Product
     public $title;
     private $price;
     public $image;
-    public $category = 'Cats and Dogs';
+    public $categories;
     public $type;
 
     public function __construct($_title, $_price, $_image, $_type)
