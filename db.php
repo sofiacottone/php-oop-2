@@ -17,6 +17,10 @@ $ball = new Game('Beach Balls', 2.99, 'https://www.petfoodnmore.com/wp-content/u
 $harness = new Accessory('Harness Blue', 21.99, 'https://www.petfoodnmore.com/wp-content/uploads/2024/03/16383____BLLPXS.jpg', $cats_dogs);
 $tuna_dinner = new Food('Tuna Dinner', 1.99, 'https://www.petfoodnmore.com/wp-content/uploads/2021/12/snappy-tom-lites-tuna-cat-wet-food.png', $cat, 85, 'Tuna');
 
+$harness->color = 'Blue';
+$bed->color = 'Beige';
+$ball->color = 'Miscellaneous';
+
 $products = [
     $bed,
     $ball,
