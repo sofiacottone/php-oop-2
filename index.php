@@ -41,16 +41,27 @@ require_once __DIR__ . '/Models/Category.php';
         <div class="container">
             <div class="card-group gap-3 my-5">
                 <?php foreach ($products as $product) { ?>
+                    <?php $className = get_class($product); ?>
                     <div class="card rounded shadow border" role="button">
                         <img src="<?php echo $product->image ?>" class="card-img-top rounded" alt="">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $product->title ?></h5>
                             <div class="card-text text-success"><?php echo $product->getPrice() ?> <?php echo '€' ?></div>
+                            <?php if (isset($product->size)) { ?>
+                                <div><?php echo $product->size; ?></div>
+                            <?php } ?>
+                            <?php if (isset($product->weight)) { ?>
+                                <div><?php echo $product->weight; ?><?php echo 'g' ?></div>
+                            <?php } ?>
+                            <?php if (isset($product->ingredients)) { ?>
+                                <div>Ingredients: <?php echo $product->ingredients; ?></div>
+                            <?php } ?>
                         </div>
                         <div class="card-footer">
-                            <small class="text-body-secondary"><?php echo $product->type ?></small>
-                            <div>
-                                <?php echo $product->categories ?>
+                            <div class="hstack justify-content-between">
+                                <?php echo $className; ?>
+                                <img src="<?php echo $product->categories->icon ?>" alt="<?php echo $product->categories->name ?>">
+
                             </div>
                         </div>
                     </div>
