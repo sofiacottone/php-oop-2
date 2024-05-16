@@ -5,14 +5,13 @@ class Product
     private $price;
     public $image;
     public $categories;
-    public $type;
 
-    public function __construct($_title, $_price, $_image, $_type)
+    public function __construct($_title, $_price, $_image, Category $_categories)
     {
         $this->title = $_title;
         $this->price = $_price;
         $this->image = $_image;
-        $this->type = $_type;
+        $this->categories = $_categories;
     }
 
     public function getPrice()
