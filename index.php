@@ -56,6 +56,9 @@ require_once __DIR__ . '/Models/Category.php';
                             <?php if (isset($product->ingredients)) { ?>
                                 <div>Ingredients: <?php echo $product->ingredients; ?></div>
                             <?php } ?>
+                            <?php if (isset($product->color)) { ?>
+                                <div>Color: <?php echo $product->color; ?></div>
+                            <?php } ?>
                         </div>
                         <div class="card-footer">
                             <div class="hstack justify-content-between">
